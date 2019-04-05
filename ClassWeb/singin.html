@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="wireframe.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12"><a class="navbar-brand d-none d-md-block" href="#">
+            <i class="fa d-inline fa-lg fa-circle mr-1"></i>
+            <b contenteditable="true"> ParisTech</b>
+          </a></div>
+      </div> <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarPrimarySupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="">
+        <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse text-center justify-content-end" id="navbarPrimarySupportedContent">
+        <b class="text-light">卓工尚未入驻？请</b>
+        <a class="btn nav-link text-white" href="#">注册</a>
+      </div>
+    </div>
+  </nav>
+  <div class="py-5 h-100" style="background-image: url('https://static.pingendo.com/cover-stripes.svg'); background-position:left center; background-size: cover;">
+    <div class="container">
+      <div class="row d-flex justify-content-center h-75">
+        <div class="p-5 col-lg-6">
+          <h1 class="text-center mt-3" style="font-size:45px">Bonjour et bienvenue à</h1>
+          <h1 class="text-center" style="font-size:60px"><span style="color:#2D76FF">Par</span><span style="color:#DCE4EA">is</span><span style="color:#FF4A4A">Tech</span></h1>
+          <p class="mb-3 text-center" style="font-size:30px">欢迎来自巴黎高科学院的卓工！</p>
+          <form>
+            <div class="form-group"> <input type="email" class="form-control" placeholder="Enter your email" id="form11"> </div>
+            <div class="form-group"> <input type="password" class="form-control" placeholder="Password" id="form12"> <small class="form-text text-muted text-right">
+                <a href="#"> 忘记你的密码?</a>
+              </small> </div> <button type="submit" class="btn btn-primary" contenteditable="true" data-toggle="modal" id="signin" data-target="#myModal">登陆</button> <a class="btn btn-light" href="#">注册</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="myModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content"> {% if success%} <div class="modal-header">
+          <h5 class="modal-title">登陆成功～</h5> <button type="button" class="close" data-dismiss="modal"> <span>×</span> </button>
+        </div>
+        <div class="modal-body">
+          <p>卓工之旅即将开始～</p>
+        </div>
+        <div class="modal-footer"> <button type="button" class="btn btn-primary">卓工已明白</button> <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button> </div> {% else %} <div class="modal-header">
+          <h5 class="modal-title">登陆失败～</h5> <button type="button" class="close" data-dismiss="modal"> <span>×</span> </button>
+        </div>
+        <div class="modal-body">
+          <p>用户名或密码不正确～</p>
+        </div>
+        <div class="modal-footer"> <button type="button" class="btn btn-primary">卓工只是手抖...</button> <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button> </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous" style=""></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
+</body>
+
+</html>
