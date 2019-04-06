@@ -1,94 +1,104 @@
 <!DOCTYPE html>
 <html>
 
-
 <head>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <meta charset="utf-8">
-    <title>ParisTech</title>
-    <style>
-        .title {
-            font-family: monospace;
-            font-size: 90px;
-            color: #4A76FF;
-        }
-
-        .welcome {
-            font-size: #FFFFFF;
-            font-size: 50px;
-        }
-
-        p {
-            font-size: #FFFFFF;
-            font-size: 35px;
-        }
-
-        #name {
-            margin-top: 80px;
-        }
-
-        #logindiv {
-            margin-top: 40px;
-            font-size: 20px;
-        }
-
-        #loginbtn {
-            border-style: solid;
-            border-width: 2px;
-            color: #58BE61;
-            border-color: #58BE61;
-            border-radius: 30px;
-        }
-
-        #signinbtn {
-            border-style: solid;
-            border-width: 2px;
-            color: #989898;
-            border-color: #989898;
-            border-radius: 30px;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+          type="text/css">
+    <link rel="stylesheet" href="wireframe.css">
 </head>
 
 <body>
-<div class="container-fluid">
-    <div id="name">
-        <p class="welcome text-center">Bonjour et bienvenue à </p>
-        <h2 class="text-center title">Par</span><span style="color:#DCE4EA">is</span><span
-                style="color:#FF4A4A">Tech</span></h2>
-        <p class="text-center">欢迎来自巴黎高科学院的卓工！</p>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12"><a class="navbar-brand d-none d-md-block" href="#">
+                <i class="fa d-inline fa-lg fa-circle mr-1"></i>
+                <b contenteditable="true"> ParisTech</b>
+            </a></div>
+        </div>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarPrimarySupportedContent" aria-controls="navbar2SupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation" style="">
+            <span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse text-center justify-content-end" id="navbarPrimarySupportedContent">
+            <b class="text-light">卓工尚未入驻？请</b>
+            <a class="btn nav-link text-white" href="#">注册</a>
+        </div>
     </div>
-
-    <form action="{{request.url}}" method="post">
-        <div class="row" style="margin-top: 40px">
-            <div class="col-xs-4"></div>
-            <div class="col-xs-2 text-center"><span style="font-size: 25px" class="text-center">用户名:</span></div>
-            <div class="col-xs-2"><input type="text" placeholder="yourname@example.com" required class="form-control" name="username"
-                                         style="width:200px"></div>
-            <div class="col-xs-4"></div>
-        </div>
-
-        <div class="row" style="margin-top: 20px">
-            <div class="col-xs-4"></div>
-            <div class="col-xs-2 text-center"><span style="font-size: 25px" class="text-center">密码:</span></div>
-            <div class="col-xs-2"><input type="password" placeholder="yourpassword" required class="form-control" name="password"
-                                         style="width:200px"></div>
-            <div class="col-xs-4"></div>
-        </div>
-
-        <div class="row" id="logindiv">
-            <div class="col-xs-4"></div>
-            <div type="submit" class="col-xs-2 text-center">
-                <button class="btn btn-block" style="font-size:20px" id="loginbtn">登陆</button>
+</nav>
+<div class="py-5 h-100"
+     style="background-image: url('https://static.pingendo.com/cover-stripes.svg'); background-position:left center; background-size: cover;">
+    <div class="container">
+        <div class="row d-flex justify-content-center h-75">
+            <div class="p-5 col-lg-6">
+                <h1 class="text-center mt-3" style="font-size:45px">Bonjour et bienvenue à</h1>
+                <h1 class="text-center" style="font-size:60px"><span style="color:#2D76FF">Par</span><span
+                        style="color:#DCE4EA">is</span><span style="color:#FF4A4A">Tech</span></h1>
+                <p class="mb-3 text-center" style="font-size:30px">欢迎来自巴黎高科学院的卓工！</p>
+                <form>
+                    <div class="form-group"><input type="email" class="form-control" placeholder="Enter your email"
+                                                   id="form11"></div>
+                    <div class="form-group"><input type="password" class="form-control" placeholder="Password"
+                                                   id="form12">
+                        <small class="form-text text-muted text-right">
+                            <a href="#"> 忘记你的密码?</a>
+                        </small>
+                    </div>
+                    <button type="submit" class="btn btn-primary" contenteditable="true" data-toggle="modal" id="signin"
+                            data-target="#myModal">登陆
+                    </button>
+                    <a class="btn btn-light" href="#">注册</a>
+                </form>
             </div>
-            <div class="col-xs-2 text-center">
-                <button class="btn btn-block" style="font-size:20px" id="signinbtn">注册</button>
-            </div>
-            <div class="col-xs-4"></div>
         </div>
-    </form>
-
+    </div>
 </div>
+<div class="modal" id="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content"> {% if success %}
+            <div class="modal-header">
+                <h5 class="modal-title">登陆成功～</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+            </div>
+            <div class="modal-body">
+                <p>卓工之旅即将开始～</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">卓工已明白</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+            </div>
+            {% else %}
+            <div class="modal-header">
+                <h5 class="modal-title">登陆失败～</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+            </div>
+            <div class="modal-body">
+                <p>用户名或密码不正确～</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">卓工只是手抖...</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<pingendo onclick="window.open('https://pingendo.com/', '_blank')"
+          style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">
+    Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block"
+                                            alt="Pingendo logo" height="16"></pingendo>
 </body>
+
 </html>
